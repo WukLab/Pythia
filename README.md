@@ -1,2 +1,69 @@
 # Pythia
 Pythia: Remote Oracles for the Masses
+
+Pythia is a set of RDMA-based remote side-channel attacks that allow an attacker on one client machine to learn how victims on other client machines access data a server exports as an in-memory data service. 
+
+We reverse engineer the memory architecture of the most widely used RDMA NIC and use this knowledge to improve the efficiency of Pythia. 
+
+We evaluated Pythia both in a laboratory and in a public cloud setting. Pythia is fast (57 us), accurate (97% accuracy), and can hide all its traces from the victim or the server.
+
+For more information please check [Pythia Paper](https://www.usenix.org/system/files/sec19-tsai.pdf) appeared in *USENIX SEC '19*.
+
+This version of Pythia has been tested for the following configuration:
+
+1. Software
+  * OS: CentOS 7.2 
+  * RDMA drivers: MLNX_OFED_LINUX-4.3-1.0.1.0
+2. Hardware
+  * RNICs:
+    * ConnectX-4 (InfiniBand)
+3. Package (on CentOS7)
+  * required packages: `memcached memcached-devel libmemcached libmemcached-devel numactl numactl-devel mbedtls mbedtls-devel glib2 glib2-devel `
+  * add the following two lines to the end of /etc/security/limits.conf
+    * `* soft memlock unlimited`
+    * `* hard memlock unlimited`
+
+## How To Run Pythia
+
+### Prerequisites
+1. Three machines connected via RDMA capable devices (server, victim, and attacker)
+
+### S1: Setup MEMCACHED
+Modify MEMCACHED_IP in rsec_base.h to server's IP
+
+### S2: Setup setup.json
+Modify setup.json to have correct device index and debug mode
+
+### S3: Compile Pythia
+make clean all
+
+### S4: Run server
+execute run_server.sh on server machine
+
+### S5: Run client
+execute run_client.sh on client machine
+
+### S6: Run attacher
+execute run_attacker.sh on attacker machine
+
+It will show you the Pythia line in figure 7 in the paper.
+
+### S7: CloudLab (optional)
+in CloudLab, please change ibsetup.h to enable RoCE since CloudLab is using RoCE
+
+CAUTION: cloudlab is using vlan for RoCE. Therefore, SGID is configured as 4. Please check https://community.mellanox.com/s/article/howto-configure-roce-on-connectx-4 for more details
+
+## History:
+`Pythia v0.1`: first opensource Pythia
+
+## To cite Pythia, please use:
+
+>\@inproceedings{USENIXSEC19-PYTHIA,  
+> author = {Shin-Yeh Tsai and Mathias Payer and Yiying Zhang},  
+> title = {Pythia: Remote Oracles for the Masses},  
+> booktitle = {28th {USENIX} Security Symposium (Usenix SEC '19)},  
+> year = {2019},  
+> address = {Santa Clara, CA, USA},  
+> month = {August}  
+>}
+ 
