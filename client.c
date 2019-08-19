@@ -301,7 +301,7 @@ void attacker_code(struct ib_inf *global_inf, struct ib_local_inf *local_inf,
     int ret_len;
 
     FILE *fp = create_log();
-    FILE *fp_each_log = fopen("each_time.log", "w");
+    //FILE *fp_each_log = fopen("each_time.log", "w");
 
     FILE *fp_key;
     int *key_array;
@@ -506,12 +506,12 @@ void attacker_code(struct ib_inf *global_inf, struct ib_local_inf *local_inf,
                         sum_hit += lat_reload;
                     else
                         sum_evict += lat_evict;
-                    if (answer == 1)
-                        RSEC_FPRINT(fp_each_log, "correct\t%d\t%f\n",
-                                    (int)*signal_input, lat_reload);
-                    else
-                        RSEC_FPRINT(fp_each_log, "fail\t%d\t%f\n",
-                                    (int)*signal_input, lat_reload);
+                    //if (answer == 1)
+                    //    RSEC_FPRINT(fp_each_log, "correct\t%d\t%f\n",
+                    //                (int)*signal_input, lat_reload);
+                    //else
+                    //    RSEC_FPRINT(fp_each_log, "fail\t%d\t%f\n",
+                    //                (int)*signal_input, lat_reload);
                     break;
             }
             if (answer) count++;
@@ -658,6 +658,6 @@ void attacker_code(struct ib_inf *global_inf, struct ib_local_inf *local_inf,
     sprintf(memcached_string, RSEC_TERMINATE_STRING, input_arg->machine_id);
     memcached_publish(memcached_string, &input_arg->machine_id, sizeof(int));
     if (fp) close_log(fp);
-    if (fp_each_log) fclose(fp_each_log);
+    //if (fp_each_log) fclose(fp_each_log);
     free(memcached_string);
 }
