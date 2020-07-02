@@ -1,7 +1,9 @@
-# Pythia
-Pythia: Remote Oracles for the Masses
+# Pythia: Remote Oracles for the Masses (USENIX Security 2019)
 
-Pythia is a set of RDMA-based remote side-channel attacks that allow an attacker on one client machine to learn how victims on other client machines access data a server exports as an in-memory data service. 
+[[Paper]](https://www.usenix.org/system/files/sec19-tsai.pdf)
+[[Slide]](./Documentation/Shin-Yeh-RDMASecurity-081519-UsenixSecurity.pdf)
+
+Pythia is a set of __RDMA-based remote side-channel attacks__ that allow an attacker on one client machine to learn how victims on other client machines access data a server exports as an in-memory data service. 
 
 We reverse engineer the memory architecture of the most widely used RDMA NIC and use this knowledge to improve the efficiency of Pythia. 
 
@@ -56,7 +58,9 @@ CAUTION: cloudlab is using vlan for RoCE. Therefore, SGID is configured as 4. Pl
 ## History:
 `Pythia v0.1`: first opensource Pythia
 
-## To cite Pythia, please use:
+## Cite
+
+To cite Pythia, please use:
 
 >\@inproceedings{USENIXSEC19-PYTHIA,  
 > author = {Shin-Yeh Tsai and Mathias Payer and Yiying Zhang},  
