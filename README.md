@@ -4,8 +4,6 @@
 [__[Slide]__](./Documentation/Shin-Yeh-RDMASecurity-081519-UsenixSecurity.pdf)
 [__[Talk]__](https://www.usenix.org/conference/usenixsecurity19/presentation/tsai)
 
----
-
 ## Pythia
 
 Pythia is a set of __RDMA-based remote side-channel attacks__ that allow an attacker on one client machine to learn how victims on other client machines access data a server exports as an in-memory data service.  We reverse engineer the memory architecture of the most widely used Mellanox RDMA NIC and use this knowledge to improve the efficiency of Pythia. 
