@@ -10,9 +10,7 @@
 
 Pythia is a set of __RDMA-based remote side-channel attacks__ that allow an attacker on one client machine to learn how victims on other client machines access data a server exports as an in-memory data service.  We reverse engineer the memory architecture of the most widely used Mellanox RDMA NIC and use this knowledge to improve the efficiency of Pythia. 
 
-We evaluated Pythia both in a laboratory and in a public cloud setting. Pythia is fast (_57 us_), accurate (_97% accuracy_), and can hide all its traces from the victim or the server.
-
-For more information please check the [Pythia Paper](https://www.usenix.org/system/files/sec19-tsai.pdf) appeared in *USENIX Security 2019*.
+We evaluated Pythia both in a laboratory and in a public cloud (CloudLab) setting. Pythia is fast (_57 us_), accurate (_97% accuracy_), and can hide all its traces from the victim or the server.
 
 ## Testing
 
