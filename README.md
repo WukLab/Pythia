@@ -1,15 +1,20 @@
-# Pythia: Remote Oracles for the Masses (USENIX Security 2019)
+# Pythia: Remote Oracles for the Masses (RDMA Side-Channel Attack)
 
-[[Paper]](https://www.usenix.org/system/files/sec19-tsai.pdf)
-[[Slide]](./Documentation/Shin-Yeh-RDMASecurity-081519-UsenixSecurity.pdf)
+[__[USENIX Security 2019 Paper]__](https://www.usenix.org/system/files/sec19-tsai.pdf)
+[__[Slide]__](./Documentation/Shin-Yeh-RDMASecurity-081519-UsenixSecurity.pdf)
+[__[Talk]__](https://www.usenix.org/conference/usenixsecurity19/presentation/tsai)
 
-Pythia is a set of __RDMA-based remote side-channel attacks__ that allow an attacker on one client machine to learn how victims on other client machines access data a server exports as an in-memory data service. 
+---
 
-We reverse engineer the memory architecture of the most widely used RDMA NIC and use this knowledge to improve the efficiency of Pythia. 
+## Pythia
 
-We evaluated Pythia both in a laboratory and in a public cloud setting. Pythia is fast (57 us), accurate (97% accuracy), and can hide all its traces from the victim or the server.
+Pythia is a set of __RDMA-based remote side-channel attacks__ that allow an attacker on one client machine to learn how victims on other client machines access data a server exports as an in-memory data service.  We reverse engineer the memory architecture of the most widely used Mellanox RDMA NIC and use this knowledge to improve the efficiency of Pythia. 
 
-For more information please check [Pythia Paper](https://www.usenix.org/system/files/sec19-tsai.pdf) appeared in *USENIX SEC '19*.
+We evaluated Pythia both in a laboratory and in a public cloud setting. Pythia is fast (_57 us_), accurate (_97% accuracy_), and can hide all its traces from the victim or the server.
+
+For more information please check the [Pythia Paper](https://www.usenix.org/system/files/sec19-tsai.pdf) appeared in *USENIX Security 2019*.
+
+## Testing
 
 This version of Pythia has been tested for the following configuration:
 
@@ -24,8 +29,6 @@ This version of Pythia has been tested for the following configuration:
   * add the following two lines to the end of /etc/security/limits.conf
     * `* soft memlock unlimited`
     * `* hard memlock unlimited`
-
-## How To Run Pythia
 
 ### Prerequisites
 1. Three machines connected via RDMA capable devices (server, victim, and attacker)
