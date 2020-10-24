@@ -1,4 +1,8 @@
-# Pythia: Remote Oracles for the Masses (RDMA Side-Channel Attack)
+<p align="center">
+<img src="https://github.com/WukLab/Pythia/blob/master/Documentation/logo.png" height="250" width="350">
+</p>
+
+__Pythia: Remote Oracles for the Masses (RDMA Side-Channel Attack)__
 
 [__[USENIX Security 2019 Paper]__](https://www.usenix.org/system/files/sec19-tsai.pdf)
 [__[Slide]__](./Documentation/Shin-Yeh-RDMASecurity-081519-UsenixSecurity.pdf)
