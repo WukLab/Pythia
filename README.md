@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/WukLab/Pythia/blob/master/Documentation/logo.png" height="250" width="350">
+<img src="https://github.com/WukLab/Pythia/blob/master/Documentation/logo.png" height="250" width="250">
 </p>
 
 __Pythia: Remote Oracles for the Masses (RDMA Side-Channel Attack)__
